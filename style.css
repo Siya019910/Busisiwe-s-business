@@ -1,0 +1,73 @@
+body {
+  font-family: Arial;
+sans-serif;
+  margin: 0;
+  background: peachpuff;
+  color: goldenrod;
+}
+
+header {
+  text-align: color;
+  padding: 20px
+  background: peachpuff;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: background;
+  font-weight: hold;
+}
+
+.slogan {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.home main .images  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.image-card {
+  max-width: 15px;
+  text-align: center;
+}
+
+.image-card img,
+.gallery img,
+.bottom-image img {
+width: 100%;
+border-radius: 10px;
+}
+
+.contact-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff; /* changed to white to match the text color */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid #fff; /* added a white border */
+}
+
+
+.service-list li {
+  margin: 10px 0;
+  }
+  
+  .time, .address {
+    text-align: center;
+  }
+  
+  .bottom-image {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  

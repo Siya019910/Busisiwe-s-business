@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>It's Drushy with them Lashes...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: url('images/footer.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    header {
+      background: rgba(255, 218, 185, 0.8); /* peachpuff with opacity */
+      color: goldenrod;
+      padding: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: goldenrod;
+    }
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    .image-card img {
+      width: 100px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .image-card img:hover {
+      transform: scale(1.05);
+    }
+    .image-card p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: black;
+    }
+    .contact-buttons {
+      margin: 20px;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background: none;
+      color: black;
+      border: 2px solid black;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .contact-buttons a:hover {
+      background: black;
+      color: white;
+    }
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>It's Drushy with them Lashes...</h1>
+    <p>Lashes speak louder than words</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="images">
+      <div class="image-card">
+        <img src="images/lash1.jpg" alt="Beautiful Cluster Lashes">
+        <p>Small cluster - enhancing your natural beauty</p>
+      </div>
+      <div class="image-card">
+        <img src="images/lash2.jpg" alt="Medium Lashes">
+        <p>Medium lashes for a balanced look</p>
+      </div>
+      <div class="image-card">
+        <img src="images/lash3.jpg" alt="Cat-eye Style">
+        <p>Cat-eye lashes for that fierce look</p>
+      </div>
+    </section>
+
+    <div class="contact-buttons">
+      <a href="https://wa.me/27792613256?text=Hi%20Drushy!%20I%20would%20like%20to%20book%20lashes." target="_blank">WhatsApp</a>
+      <a href="mailto:busisiweh01@icloud.com" target="_blank">Email Me</a>
+    </div>
+  </main>
+
+  <div id="lightbox">
+    <img src="" alt="Zoomed image">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
