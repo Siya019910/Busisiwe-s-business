@@ -30,4 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
   emailBtn?.addEventListener("click", () => {
     window.location.href = "mailto:youremail@example.com";
   });
+
 });
+
+// Video controls functions
+
+function togglePlay(id) {
+  const video = document.getElementById(id);
+  if (video.paused) {
+    video.muted = false;   // Unmute the video
+    video.volume = 1.0;    // Set volume to max
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+
+function skip(id, seconds) {
+  const video = document.getElementById(id);
+  video.currentTime += seconds;
+}
