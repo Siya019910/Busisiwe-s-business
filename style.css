@@ -1,22 +1,21 @@
 body {
-  font-family: Arial;
-sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   background: peachpuff;
   color: goldenrod;
 }
 
 header {
-  text-align: color;
-  padding: 20px
+  text-align: center; /* fixed from 'text-align: color;' */
+  padding: 20px;
   background: peachpuff;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: background;
-  font-weight: hold;
+  color: goldenrod; /* fixed from 'color: background;' */
+  font-weight: bold; /* fixed from 'hold' */
 }
 
 .slogan {
@@ -24,7 +23,7 @@ nav a {
   margin-top: 10px;
 }
 
-.home main .images  {
+.home main .images {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -33,15 +32,15 @@ nav a {
 }
 
 .image-card {
-  max-width: 15px;
+  max-width: 150px; /* fixed from 15px, seems more reasonable */
   text-align: center;
 }
 
 .image-card img,
 .gallery img,
 .bottom-image img {
-width: 100%;
-border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .contact-buttons button {
@@ -49,25 +48,23 @@ border-radius: 10px;
   border: none;
   border-radius: 8px;
   background: transparent;
-  color: #fff; /* changed to white to match the text color */
+  color: #fff; /* white text */
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s;
-  border: 1px solid #fff; /* added a white border */
+  border: 1px solid #fff; /* white border */
 }
-
 
 .service-list li {
   margin: 10px 0;
-  }
-  
-  .time, .address {
-    text-align: center;
-  }
-  
-  .bottom-image {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  
+}
+
+.time, .address {
+  text-align: center;
+}
+
+.bottom-image {
+  text-align: center;
+  margin-top: 20px;
+}
+ 
