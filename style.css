@@ -1,16 +1,12 @@
+/* Base background */
 body {
+  background: peachpuff;
   font-family: Arial, sans-serif;
   margin: 0;
-  background: peachpuff;
-  color: goldenrod;
+  padding: 0;
 }
 
-header {
-  text-align: center; /* fixed from 'text-align: color;' */
-  padding: 20px;
-  background: peachpuff;
-}
-
+/* Navigation links */
 nav a {
   margin: 0 10px;
   text-decoration: none;
@@ -18,11 +14,13 @@ nav a {
   font-weight: bold; /* fixed from 'hold' */
 }
 
+/* Slogan */
 .slogan {
   font-size: 1.2em;
   margin-top: 10px;
 }
 
+/* Home images container */
 .home main .images {
   display: flex;
   flex-wrap: wrap;
@@ -31,18 +29,44 @@ nav a {
   padding: 20px;
 }
 
+/* Image cards */
 .image-card {
-  max-width: 150px; /* fixed from 15px, seems more reasonable */
+  max-width: 150px; /* fixed from 15px */
   text-align: center;
 }
 
+/* Image styling */
 .image-card img,
 .gallery img,
 .bottom-image img {
   width: 100%;
   border-radius: 10px;
+  display: block;
 }
 
+/* Video container styling */
+.video-container {
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+/* Style all gallery images and videos uniformly */
+.gallery-img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Remove any leftover controls buttons styles (if you had them) */
+/* Just in case buttons linger, hide them */
+.controls {
+  display: none !important;
+}
+
+/* Contact buttons */
 .contact-buttons button {
   padding: 12px 25px;
   border: none;
@@ -55,16 +79,18 @@ nav a {
   border: 1px solid #fff; /* white border */
 }
 
+/* Service list items */
 .service-list li {
   margin: 10px 0;
 }
 
+/* Centered time and address */
 .time, .address {
   text-align: center;
 }
 
+/* Bottom image container */
 .bottom-image {
   text-align: center;
   margin-top: 20px;
 }
- 
