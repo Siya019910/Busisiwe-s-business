@@ -72,11 +72,6 @@
           <source src="images/clientv4.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <div class="controls">
-          <button onclick="togglePlay('video4')">Play/Pause</button>
-          <button onclick="skip('video4', -5)">« 5s Back</button>
-          <button onclick="skip('video4', 5)">5s Forward »</button>
-        </div>
       </div>
     </section>
   </main>
@@ -86,25 +81,12 @@
     <img class="lightbox-content" id="lightbox-img" alt="">
   </div>
 
-  <script>
-    function togglePlay(id) {
-      const video = document.getElementById(id);
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    }
-
-    function skip(id, seconds) {
-      const video = document.getElementById(id);
-      video.currentTime += seconds;
-    }
-  </script>
+  <!-- Removed togglePlay and skip functions as they are no longer needed -->
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
