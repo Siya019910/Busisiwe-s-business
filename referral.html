@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community & Social Vibes Referral Program - Busisiwe's Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: gold;
+      background: url('busi.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* Lighter dark overlay to reveal background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3); /* lighter overlay */
+      z-index: -1;
+      backdrop-filter: brightness(0.9);
+    }
+    /* Glam gold gradient text */
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400;
+      background: linear-gradient(45deg, #FFD700, #FFA500, #FFF8DC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 8px #FFD700, 0 0 15px #FFA500;
+      margin-bottom: 15px;
+    }
+    p, .step p {
+      font-size: 1.1em;
+      line-height: 1.5;
+      color: #F0E68C;
+      text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+      margin-bottom: 20px;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      box-shadow: 0 2px 12px rgba(255,215,0,0.7);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: gold;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 40px;
+      border: 2px solid transparent;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      background-clip: padding-box;
+      box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.5),
+        inset 0 0 12px rgba(255, 255, 255, 0.4);
+      transition: all 0.4s ease;
+      font-size: 1.1em;
+      letter-spacing: 0.05em;
+    }
+    nav a:hover, nav a.active {
+      border-color: gold;
+      background: transparent;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+      box-shadow:
+        0 0 25px #FFD700,
+        inset 0 0 15px #FFA500;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      padding: 35px 40px;
+      background: rgba(255 255 255 / 0.07); /* lighter glass */
+      border-radius: 25px;
+      box-shadow:
+        0 8px 30px rgba(255, 215, 0, 0.4),
+        inset 0 0 15px rgba(255, 215, 0, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 215, 0, 0.3);
+      color: #fff7aa;
+    }
+    .steps {
+      margin: 40px 0 50px;
+    }
+    .step {
+      margin-bottom: 30px;
+      border-left: 6px solid gold;
+      padding-left: 20px;
+      box-shadow: 0 0 20px gold;
+      border-radius: 8px;
+      background: rgba(255 255 255 / 0.07);
+      transition: box-shadow 0.3s ease;
+    }
+    .step:hover {
+      box-shadow: 0 0 40px 5px gold;
+    }
+    form {
+      margin-top: 40px;
+      text-align: center;
+    }
+    input, button {
+      border-radius: 40px;
+      border: 2.5px solid gold;
+      padding: 14px 24px;
+      font-size: 1.1em;
+      font-family: 'Montserrat', sans-serif;
+      color: gold;
+      background: rgba(255 255 255 / 0.12);
+      box-shadow:
+        0 6px 20px rgba(255, 215, 0, 0.5);
+      outline: none;
+      transition: all 0.4s ease;
+      margin: 10px auto;
+      display: block;
+      width: 80%;
+      max-width: 360px;
+      text-align: center;
+    }
+    input::placeholder {
+      color: gold;
+      opacity: 0.7;
+      font-style: italic;
+    }
+    input:focus {
+      background: rgba(255 255 255 / 0.25);
+      box-shadow:
+        0 0 15px 4px #FFD700,
+        0 0 30px 10px #FFA500;
+      border-color: gold;
+      color: gold;
+    }
+    button {
+      font-weight: 900;
+      cursor: pointer;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      box-shadow:
+        0 0 25px #FFD700,
+        inset 0 0 20px #FFA500;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      user-select: none;
+    }
+    button:hover {
+      background: linear-gradient(60deg, #fffacd, #ffb833);
+      box-shadow:
+        0 0 40px 8px #FFD700,
+        inset 0 0 30px 5px #FFA500;
+      color: black;
+      transform: scale(1.12);
+    }
+    .social-links {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .social-links h2 {
+      margin-bottom: 20px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4em;
+      background: linear-gradient(45deg, #FFD700, #FFA500, #FFF8DC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 15px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      border: 3px solid gold;
+      background: radial-gradient(circle at center, #fff8cc 0%, transparent 80%);
+      color: #b8860b;
+      font-weight: 700;
+      font-size: 1.2em;
+      box-shadow:
+        0 6px 15px rgba(255, 215, 0, 0.9);
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle sparkle animation */
+    .social-links a::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 20%, transparent 70%);
+      opacity: 0;
+      transform: rotate(25deg);
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .social-links a:hover::before {
+      opacity: 0.4;
+      animation: sparkle 2s linear infinite;
+    }
+    @keyframes sparkle {
+      0% {transform: rotate(25deg) translateX(-100%);}
+      100% {transform: rotate(25deg) translateX(100%);}
+    }
+    .social-links a:hover {
+      background: gold;
+      color: black;
+      box-shadow:
+        0 0 30px 10px #FFD700;
+      transform: scale(1.15);
+      z-index: 10;
+    }
+    .thank-you {
+      text-align: center;
+      margin-top: 40px;
+      display: none;
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #ffec8b;
+      text-shadow: 0 0 15px #ffde59;
+    }
+    a.thank-you-link {
+      color: #ffde59;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2em;
+      text-shadow: 0 0 10px #ffde59;
+      display: inline-block;
+      margin-top: 15px;
+      transition: color 0.3s ease;
+    }
+    a.thank-you-link:hover {
+      color: #fff9b1;
+      text-shadow: 0 0 20px #fff9b1;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      input {
+        width: 95%;
+      }
+      .social-links a {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="referral.html" class="active">Referral</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>🌍 Community & Social Vibes Referral Program</h1>
+  <p>Spread the word, grow the vibe, and earn rewards for every friend you bring to the Busisiwe’s Business family 💖</p>
+
+  <section class="steps">
+    <div class="step">
+      <h2>1️⃣ Share the Love</h2>
+      <p>Invite your friends to try our beautiful lash services — either in person or on social media.</p>
+    </div>
+    <div class="step">
+      <h2>2️⃣ Earn Rewards</h2>
+      <p>For every friend who books an appointment, you get a special discount of 80% or free add-on treatment.</p>
+    </div>
+    <div class="step">
+      <h2>3️⃣ Repeat & Shine</h2>
+      <p>The more friends you refer, the bigger your rewards. There’s no limit!</p>
+    </div>
+  </section>
+
+  <form id="referralForm" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="friend_name" placeholder="Friend's Name" required />
+    <input type="email" name="friend_email" placeholder="Friend's Email" required />
+    <button type="submit">Send Referral ✨</button>
+  </form>
+
+  <div class="thank-you" id="thankYouMessage">
+    <h2>🎉 Thank You!</h2>
+    <p>Your referral has been sent. Let’s make your lash circle grow!</p>
+    <a href="index.html" class="thank-you-link">Back to Home</a>
+  </div>
+
+  <div class="social-links">
+    <h2>📢 Share or Contact Us</h2>
+    <a href="https://wa.me/27712345678?text=Hi%20Busisiwe%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">WhatsApp</a>
+    <a href="mailto:yourbusiness@email.com?subject=Referral%20Program&body=Hi%20Busisiwe%2C%20I%20want%20to%20refer%20a%20friend..." target="_blank" rel="noopener">Email</a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</main>
+
+<script>
+  const form = document.getElementById('referralForm');
+  const thankYou = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      form.style.display = 'none';
+      thankYou.style.display = 'block';
+    }).catch(error => {
+      alert('Oops! Something went wrong.');
+    });
+  });
+</script>
+
+</body>
+</html>
