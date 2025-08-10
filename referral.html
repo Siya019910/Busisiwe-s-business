@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      color: gold;
+      color: peachpuff;
       background: url('busi.jpg') no-repeat center center fixed;
       background-size: cover;
       position: relative;
@@ -30,23 +30,24 @@
     h1, h2 {
       font-family: 'Great Vibes', cursive;
       font-weight: 400;
-      background: linear-gradient(45deg, #FFD700, #FFA500, #FFF8DC);
+      background: linear-gradient(45deg, goldenrod, peachpuff, #FFF8DC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 8px #FFD700, 0 0 15px #FFA500;
+      text-shadow: 0 0 8px goldenrod, 0 0 15px peachpuff;
       margin-bottom: 15px;
     }
     p, .step p {
       font-size: 1.1em;
       line-height: 1.5;
       color: #F0E68C;
-      text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+      /* Fix text-shadow (was incorrect syntax) */
+      text-shadow: 0 0 5px rgba(255, 218, 85, 0.6);
       margin-bottom: 20px;
     }
     header {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(255, 218, 85, 0.8); /* peachpuff-like gold transparent */
       padding: 15px 0;
-      box-shadow: 0 2px 12px rgba(255,215,0,0.7);
+      box-shadow: 0 2px 12px peachpuff(255, 218, 85, 0.7);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -60,13 +61,13 @@
       flex-wrap: wrap;
     }
     nav a {
-      color: gold;
+      color: goldenrod;
       text-decoration: none;
       font-weight: 700;
       padding: 12px 28px;
       border-radius: 40px;
       border: 2px solid transparent;
-      background: linear-gradient(45deg, #FFD700, #FFA500);
+      background: linear-gradient(45deg, goldenrod, peachpuff);
       background-clip: padding-box;
       box-shadow:
         0 0 15px rgba(255, 215, 0, 0.5),
@@ -76,12 +77,12 @@
       letter-spacing: 0.05em;
     }
     nav a:hover, nav a.active {
-      border-color: gold;
+      border-color: goldenrod;
       background: transparent;
-      color: #FFD700;
-      text-shadow: 0 0 10px #FFD700;
+      color: goldenrod;
+      text-shadow: 0 0 10px goldenrod;
       box-shadow:
-        0 0 25px #FFD700,
+        0 0 25px goldenrod,
         inset 0 0 15px #FFA500;
       transform: scale(1.1);
       cursor: pointer;
@@ -90,12 +91,12 @@
       max-width: 900px;
       margin: 40px auto 60px;
       padding: 35px 40px;
-      background: rgba(255 255 255 / 0.07); /* lighter glass */
+      background: rgba(255, 255, 255, 0.12); /* semi-transparent white */
       border-radius: 25px;
       box-shadow:
         0 8px 30px rgba(255, 215, 0, 0.4),
         inset 0 0 15px rgba(255, 215, 0, 0.1);
-      backdrop-filter: blur(12px);
+      /* Removed blur: no backdrop-filter here */
       border: 1.5px solid rgba(255, 215, 0, 0.3);
       color: #fff7aa;
     }
@@ -104,15 +105,15 @@
     }
     .step {
       margin-bottom: 30px;
-      border-left: 6px solid gold;
+      border-left: 6px solid goldenrod;
       padding-left: 20px;
-      box-shadow: 0 0 20px gold;
+      box-shadow: 0 0 20px goldenrod;
       border-radius: 8px;
-      background: rgba(255 255 255 / 0.07);
+      background: rgba(255, 255, 255, 0.07);
       transition: box-shadow 0.3s ease;
     }
     .step:hover {
-      box-shadow: 0 0 40px 5px gold;
+      box-shadow: 0 0 40px 5px goldenrod;
     }
     form {
       margin-top: 40px;
@@ -120,12 +121,12 @@
     }
     input, button {
       border-radius: 40px;
-      border: 2.5px solid gold;
+      border: 2.5px solid goldenrod;
       padding: 14px 24px;
       font-size: 1.1em;
       font-family: 'Montserrat', sans-serif;
-      color: gold;
-      background: rgba(255 255 255 / 0.12);
+      color: goldenrod;
+      background: rgba(255, 255, 255, 0.12);
       box-shadow:
         0 6px 20px rgba(255, 215, 0, 0.5);
       outline: none;
@@ -137,25 +138,25 @@
       text-align: center;
     }
     input::placeholder {
-      color: gold;
+      color: goldenrod;
       opacity: 0.7;
       font-style: italic;
     }
     input:focus {
-      background: rgba(255 255 255 / 0.25);
+      background: rgba(255, 255, 255, 0.25);
       box-shadow:
-        0 0 15px 4px #FFD700,
-        0 0 30px 10px #FFA500;
-      border-color: gold;
-      color: gold;
+        0 0 15px 4px goldenrod,
+        0 0 30px 10px goldenrod;
+      border-color: goldenrod;
+      color: goldenrod;
     }
     button {
       font-weight: 900;
       cursor: pointer;
-      background: linear-gradient(45deg, #FFD700, #FFA500);
+      background: linear-gradient(45deg, goldenrod, peachpuff);
       box-shadow:
-        0 0 25px #FFD700,
-        inset 0 0 20px #FFA500;
+        0 0 25px goldenrod,
+        inset 0 0 20px peachpuff;
       color: black;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -164,8 +165,8 @@
     button:hover {
       background: linear-gradient(60deg, #fffacd, #ffb833);
       box-shadow:
-        0 0 40px 8px #FFD700,
-        inset 0 0 30px 5px #FFA500;
+        0 0 40px 8px goldenrod,
+        inset 0 0 30px 5px peachpuff;
       color: black;
       transform: scale(1.12);
     }
@@ -177,23 +178,23 @@
       margin-bottom: 20px;
       font-family: 'Great Vibes', cursive;
       font-size: 2.4em;
-      background: linear-gradient(45deg, #FFD700, #FFA500, #FFF8DC);
+      background: linear-gradient(45deg, goldenrod, peachpuff, #FFF8DC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500;
+      text-shadow: 0 0 15px goldenrod, 0 0 25px peachpuff;
     }
     .social-links a {
       display: inline-block;
       margin: 0 15px;
       padding: 14px 28px;
       border-radius: 50px;
-      border: 3px solid gold;
+      border: 3px solid goldenrod;
       background: radial-gradient(circle at center, #fff8cc 0%, transparent 80%);
       color: #b8860b;
       font-weight: 700;
       font-size: 1.2em;
       box-shadow:
-        0 6px 15px rgba(255, 215, 0, 0.9);
+        0 6px 15px rgba(184, 134, 11, 0.9);
       text-decoration: none;
       transition: all 0.4s ease;
       position: relative;
@@ -223,10 +224,10 @@
       100% {transform: rotate(25deg) translateX(100%);}
     }
     .social-links a:hover {
-      background: gold;
+      background: goldenrod;
       color: black;
       box-shadow:
-        0 0 30px 10px #FFD700;
+        0 0 30px 10px goldenrod;
       transform: scale(1.15);
       z-index: 10;
     }
@@ -314,7 +315,7 @@
   </div>
 
   <div class="social-links">
-    <h2>📢 Share or Contact Us</h2>
+    <h2>📢 Share with friends: Behind every great business is a community that believes in, supports, and grows together — thank you for your support! </h2>
     <a href="https://wa.me/27712345678?text=Hi%20Busisiwe%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">WhatsApp</a>
     <a href="mailto:yourbusiness@email.com?subject=Referral%20Program&body=Hi%20Busisiwe%2C%20I%20want%20to%20refer%20a%20friend..." target="_blank" rel="noopener">Email</a>
     <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
