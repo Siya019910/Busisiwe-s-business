@@ -87,28 +87,18 @@
     main {
       flex: 1; /* pushes footer to bottom */
     }
-   footer .signature {
-  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
-  font-size: 24px;
-  font-weight: normal;
-  color: goldenrod;
-  display: inline-block;
-  padding: 10px 0;
-}
-
-footer {
-  background: peachpuff; /* set peachpuff background */
-  text-align: center;
-  padding: 10px 0;
-}
-footer .signature {
-  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
-  font-size: 24px;
-  font-weight: normal;
-  color: goldenrod;
-  display: inline-block;
-}
-
+    footer {
+      background: rgba(255, 218, 185, 0.8); /* peachpuff with slight transparency */
+      text-align: center;
+      padding: 10px 0;
+    }
+    footer .signature {
+      font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+      font-size: 24px;
+      font-weight: normal;
+      color: goldenrod;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -147,10 +137,12 @@ footer .signature {
   </main>
 
   <footer>
-  <span class="signature">It's Drushy with them Lashes...™</span>
-</footer>
+    <span class="signature">It's Drushy with them Lashes...™</span>
+  </footer>
 
-
+  <div id="lightbox">
+    <img src="" alt="Zoomed image">
+  </div>
 
   <script src="script.js"></script>
 </body>
