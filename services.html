@@ -9,26 +9,35 @@
     body {
       background: url('images/footer.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #fff; /* to stand out on the image */
+      color: black; /* text readable on image */
       font-family: Arial, sans-serif;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
+    /* Header like Home page */
     header {
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(255, 218, 185, 0.8); /* peachpuff with opacity */
+      color: goldenrod;
     }
     nav a {
-      color: #fff;
+      color: goldenrod;
       text-decoration: none;
       margin: 0 10px;
       font-weight: bold;
     }
+
+    /* Main content - no dark background */
     main {
       text-align: center;
       padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.4);
+      flex: 1; /* pushes footer to bottom */
+      color: black; /* make text stand out on background */
     }
     ul.services-list {
       list-style: none;
@@ -41,6 +50,19 @@
     p.time {
       margin-top: 30px;
       font-size: 1.1em;
+    }
+
+    /* Footer styling */
+    footer {
+      background: rgba(255, 218, 185, 0.8); /* peachpuff with transparency */
+      text-align: center;
+      padding: 10px 0;
+    }
+    footer .signature {
+      font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+      font-size: 24px;
+      color: goldenrod;
+      display: inline-block;
     }
   </style>
 </head>
@@ -69,6 +91,9 @@
       Saturday - Sunday: 08:00 - 12:00
     </p>
   </main>
-</body>
 
+  <footer>
+    <span class="signature"></span>© 2025 It's Drushy with them Lashes...™</span>
+  </footer>
+</body>
 </html>
