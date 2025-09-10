@@ -4,7 +4,100 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery - It's Drushy with them lashes...</title>
-  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: url('images/footer.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(255, 218, 185, 0.8); /* peachpuff with opacity */
+      color: goldenrod;
+      padding: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: goldenrod;
+    }
+    main {
+      flex: 1; /* ensures footer stays at bottom */
+      padding: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .gallery-img {
+      width: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .video-container {
+      margin: 10px;
+    }
+    /* Contact buttons */
+    .contact-buttons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center; /* centers buttons */
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background: none;
+      color: black;
+      border: 2px solid black;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .contact-buttons a:hover {
+      background: black;
+      color: white;
+    }
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    /* Footer */
+    footer {
+      background: rgba(255, 218, 185, 0.8); /* peachpuff with slight transparency */
+      text-align: center;
+      padding: 10px 0;
+    }
+    footer .signature {
+      font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+      font-size: 24px;
+      font-weight: normal;
+      color: goldenrod;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,7 +113,6 @@
 
   <main>
     <section class="gallery">
-       <!-- Images -->
       <img src="images/client1.jpg" alt="Client1" class="gallery-img">
       <img src="images/client2.jpg" alt="Client2" class="gallery-img">
       <img src="images/client3.jpg" alt="Client3" class="gallery-img">
@@ -30,58 +122,45 @@
       <img src="images/client7.jpg" alt="Client7" class="gallery-img">
       <img src="images/client8.jpg" alt="Client8" class="gallery-img">
       <img src="images/client9.jpg" alt="Client9" class="gallery-img">
-        
+
       <div class="video-container">
-        <video id="video1" width="320" height="240" class="gallery-img" controls>
+        <video width="320" height="240" class="gallery-img" controls>
           <source src="images/clientv1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
-        <!-- Buttons removed -->
-        </div>
-
+      </div>
       <div class="video-container">
-        <video id="video2" width="320" height="240" class="gallery-img" controls>
+        <video width="320" height="240" class="gallery-img" controls>
           <source src="images/clientv2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
-        <!-- Buttons removed -->
-        </div>
       </div>
-
       <div class="video-container">
-        <video id="video3" width="320" height="240" class="gallery-img" controls>
+        <video width="320" height="240" class="gallery-img" controls>
           <source src="images/clientv3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
-        <!-- Buttons removed -->
-        </div>
       </div>
-
       <div class="video-container">
-        <video id="video4" width="320" height="240" class="gallery-img" controls>
+        <video width="320" height="240" class="gallery-img" controls>
           <source src="images/clientv4.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
-        <!-- Buttons removed -->
       </div>
     </section>
+
+    <!-- Contact Buttons -->
+    <div class="contact-buttons">
+      <a href="https://wa.me/27792613256?text=Hi%20Drushy!%20I%20would%20like%20to%20book%20lashes." target="_blank">WhatsApp</a>
+      <a href="mailto:busisiweh01@icloud.com" target="_blank">Email Me</a>
+    </div>
   </main>
+
+  <footer>
+    <span class="signature">© It's Drushy with them Lashes...™</span>
+  </footer>
 
   <!-- Lightbox overlay -->
   <div id="lightbox" class="lightbox">
     <img class="lightbox-content" id="lightbox-img" alt="">
   </div>
 
-  <!-- Removed togglePlay and skip functions as they are no longer needed -->
-
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
