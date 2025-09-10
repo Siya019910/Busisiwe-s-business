@@ -1,273 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Community & Social Vibes Referral Program - Busisiwe's Business</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Great+Vibes&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset and base */
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: peachpuff;
-      background: url('busi.jpg') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    /* Lighter dark overlay to reveal background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.3); /* lighter overlay */
-      z-index: -1;
-      backdrop-filter: brightness(0.9);
-    }
-    /* Glam gold gradient text */
-    h1, h2 {
-      font-family: 'Great Vibes', cursive;
-      font-weight: 400;
-      background: linear-gradient(45deg, goldenrod, peachpuff, #FFF8DC);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 8px goldenrod, 0 0 15px peachpuff;
-      margin-bottom: 15px;
-    }
-    p, .step p {
-      font-size: 1.1em;
-      line-height: 1.5;
-      color: #F0E68C;
-      /* Fix text-shadow (was incorrect syntax) */
-      text-shadow: 0 0 5px rgba(255, 218, 85, 0.6);
-      margin-bottom: 20px;
-    }
-    header {
-      background: rgba(255, 218, 85, 0.8); /* peachpuff-like gold transparent */
-      padding: 15px 0;
-      box-shadow: 0 2px 12px peachpuff(255, 218, 85, 0.7);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: goldenrod;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 12px 28px;
-      border-radius: 40px;
-      border: 2px solid transparent;
-      background: linear-gradient(45deg, goldenrod, peachpuff);
-      background-clip: padding-box;
-      box-shadow:
-        0 0 15px rgba(255, 215, 0, 0.5),
-        inset 0 0 12px rgba(255, 255, 255, 0.4);
-      transition: all 0.4s ease;
-      font-size: 1.1em;
-      letter-spacing: 0.05em;
-    }
-    nav a:hover, nav a.active {
-      border-color: goldenrod;
-      background: transparent;
-      color: goldenrod;
-      text-shadow: 0 0 10px goldenrod;
-      box-shadow:
-        0 0 25px goldenrod,
-        inset 0 0 15px #FFA500;
-      transform: scale(1.1);
-      cursor: pointer;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto 60px;
-      padding: 35px 40px;
-      background: rgba(255, 255, 255, 0.12); /* semi-transparent white */
-      border-radius: 25px;
-      box-shadow:
-        0 8px 30px rgba(255, 215, 0, 0.4),
-        inset 0 0 15px rgba(255, 215, 0, 0.1);
-      /* Removed blur: no backdrop-filter here */
-      border: 1.5px solid rgba(255, 215, 0, 0.3);
-      color: #fff7aa;
-    }
-    .steps {
-      margin: 40px 0 50px;
-    }
-    .step {
-      margin-bottom: 30px;
-      border-left: 6px solid goldenrod;
-      padding-left: 20px;
-      box-shadow: 0 0 20px goldenrod;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.07);
-      transition: box-shadow 0.3s ease;
-    }
-    .step:hover {
-      box-shadow: 0 0 40px 5px goldenrod;
-    }
-    form {
-      margin-top: 40px;
-      text-align: center;
-    }
-    input, button {
-      border-radius: 40px;
-      border: 2.5px solid goldenrod;
-      padding: 14px 24px;
-      font-size: 1.1em;
-      font-family: 'Montserrat', sans-serif;
-      color: goldenrod;
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow:
-        0 6px 20px rgba(255, 215, 0, 0.5);
-      outline: none;
-      transition: all 0.4s ease;
-      margin: 10px auto;
-      display: block;
-      width: 80%;
-      max-width: 360px;
-      text-align: center;
-    }
-    input::placeholder {
-      color: goldenrod;
-      opacity: 0.7;
-      font-style: italic;
-    }
-    input:focus {
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow:
-        0 0 15px 4px goldenrod,
-        0 0 30px 10px goldenrod;
-      border-color: goldenrod;
-      color: goldenrod;
-    }
-    button {
-      font-weight: 900;
-      cursor: pointer;
-      background: linear-gradient(45deg, goldenrod, peachpuff);
-      box-shadow:
-        0 0 25px goldenrod,
-        inset 0 0 20px peachpuff;
-      color: black;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      user-select: none;
-    }
-    button:hover {
-      background: linear-gradient(60deg, #fffacd, #ffb833);
-      box-shadow:
-        0 0 40px 8px goldenrod,
-        inset 0 0 30px 5px peachpuff;
-      color: black;
-      transform: scale(1.12);
-    }
-    .social-links {
-      margin-top: 50px;
-      text-align: center;
-    }
-    .social-links h2 {
-      margin-bottom: 20px;
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.4em;
-      background: linear-gradient(45deg, goldenrod, peachpuff, #FFF8DC);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px goldenrod, 0 0 25px peachpuff;
-    }
-    .social-links a {
-      display: inline-block;
-      margin: 0 15px;
-      padding: 14px 28px;
-      border-radius: 50px;
-      border: 3px solid goldenrod;
-      background: radial-gradient(circle at center, #fff8cc 0%, transparent 80%);
-      color: #b8860b;
-      font-weight: 700;
-      font-size: 1.2em;
-      box-shadow:
-        0 6px 15px rgba(184, 134, 11, 0.9);
-      text-decoration: none;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Subtle sparkle animation */
-    .social-links a::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.8) 20%, transparent 70%);
-      opacity: 0;
-      transform: rotate(25deg);
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .social-links a:hover::before {
-      opacity: 0.4;
-      animation: sparkle 2s linear infinite;
-    }
-    @keyframes sparkle {
-      0% {transform: rotate(25deg) translateX(-100%);}
-      100% {transform: rotate(25deg) translateX(100%);}
-    }
-    .social-links a:hover {
-      background: goldenrod;
-      color: black;
-      box-shadow:
-        0 0 30px 10px goldenrod;
-      transform: scale(1.15);
-      z-index: 10;
-    }
-    .thank-you {
-      text-align: center;
-      margin-top: 40px;
-      display: none;
-      font-size: 1.5em;
-      font-weight: 700;
-      color: #ffec8b;
-      text-shadow: 0 0 15px #ffde59;
-    }
-    a.thank-you-link {
-      color: #ffde59;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.2em;
-      text-shadow: 0 0 10px #ffde59;
-      display: inline-block;
-      margin-top: 15px;
-      transition: color 0.3s ease;
-    }
-    a.thank-you-link:hover {
-      color: #fff9b1;
-      text-shadow: 0 0 20px #fff9b1;
-    }
-    @media (max-width: 600px) {
-      nav {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      input {
-        width: 95%;
-      }
-      .social-links a {
-        padding: 12px 20px;
-        font-size: 1em;
-      }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Community & Social Vibes Referral Program - Busisiwe's Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+<style>
+/* Reset and base */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: peachpuff;
+  background: url('busi.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Lighter overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: -1;
+  backdrop-filter: brightness(0.9);
+}
+
+/* Header */
+header {
+  background: rgba(255, 218, 185, 0.8); /* peachpuff */
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: goldenrod;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 40px;
+  border: 2px solid transparent;
+  background: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), inset 0 0 12px rgba(255,255,255,0.4);
+  transition: all 0.4s ease;
+  font-size: 1.1em;
+}
+
+nav a:hover, nav a.active {
+  border-color: goldenrod;
+  background: goldenrod;
+  color: black;
+  box-shadow: 0 0 25px goldenrod, inset 0 0 15px #FFA500;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Main container */
+main.container {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 35px 40px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(255,215,0,0.4), inset 0 0 15px rgba(255,215,0,0.1);
+  border: 1.5px solid rgba(255,215,0,0.3);
+  color: #fff7aa;
+}
+
+/* Steps */
+.steps {
+  margin: 40px 0 50px;
+}
+
+.step {
+  margin-bottom: 30px;
+  border-left: 6px solid goldenrod;
+  padding-left: 20px;
+  box-shadow: 0 0 20px goldenrod;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  transition: box-shadow 0.3s ease;
+}
+
+.step:hover {
+  box-shadow: 0 0 40px 5px goldenrod;
+}
+
+/* Form */
+form {
+  margin-top: 40px;
+  text-align: center;
+}
+
+input, button {
+  border-radius: 40px;
+  border: 2.5px solid goldenrod;
+  padding: 14px 24px;
+  font-size: 1.1em;
+  font-family: 'Montserrat', sans-serif;
+  color: goldenrod;
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.5);
+  outline: none;
+  transition: all 0.4s ease;
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  max-width: 360px;
+  text-align: center;
+}
+
+input::placeholder {
+  color: goldenrod;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+input:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 15px 4px goldenrod, 0 0 30px 10px goldenrod;
+  border-color: goldenrod;
+  color: goldenrod;
+}
+
+button {
+  font-weight: 900;
+  cursor: pointer;
+  background: rgba(255, 215, 0, 0.2); /* Home page button style */
+  color: goldenrod;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 15px rgba(255,215,0,0.5), inset 0 0 12px rgba(255,255,255,0.4);
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background: goldenrod;
+  color: black;
+  box-shadow: 0 0 25px goldenrod, inset 0 0 15px #FFA500;
+  transform: scale(1.1);
+}
+
+/* Social links buttons - like Home page */
+.social-links {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 2px solid transparent;
+  background: rgba(255, 215, 0, 0.2);
+  color: goldenrod;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255,215,0,0.5), inset 0 0 12px rgba(255,255,255,0.4);
+  transition: all 0.4s ease;
+}
+
+.social-links a:hover {
+  background: goldenrod;
+  color: black;
+  box-shadow: 0 0 25px goldenrod, inset 0 0 15px #FFA500;
+  transform: scale(1.1);
+}
+
+/* Sticky Footer */
+footer {
+  background: rgba(255, 218, 185, 0.8); /* peachpuff */
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+footer .signature {
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-size: 24px;
+  font-weight: normal;
+  color: goldenrod;
+}
+
+@media (max-width:600px){
+  nav {gap:10px;}
+  input {width:95%;}
+  .social-links a {padding:12px 20px;font-size:1em;}
+}
+</style>
 </head>
 <body>
 
@@ -283,7 +220,7 @@
 
 <main class="container">
   <h1>🌍 Community & Social Vibes Referral Program</h1>
-  <p>Spread the word, grow the vibe, and earn rewards for every friend you bring to the Busisiwe’s Business family 💖</p>
+  <p>Spread the word, grow the vibe, and earn rewards for every friend you bring to Busisiwe’s Business 💖</p>
 
   <section class="steps">
     <div class="step">
@@ -311,37 +248,34 @@
   <div class="thank-you" id="thankYouMessage">
     <h2>🎉 Thank You!</h2>
     <p>Your referral has been sent. Let’s make your lash circle grow!</p>
-    <a href="index.html" class="thank-you-link">Back to Home</a>
-  </div>
+   </div>
 
   <div class="social-links">
-    <h2>📢 Share with friends: Behind every great business is a community that believes in, supports, and grows together — thank you for your support! </h2>
-    <a href="https://wa.me/27712345678?text=Hi%20Busisiwe%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">WhatsApp</a>
-    <a href="mailto:yourbusiness@email.com?subject=Referral%20Program&body=Hi%20Busisiwe%2C%20I%20want%20to%20refer%20a%20friend..." target="_blank" rel="noopener">Email</a>
-    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://wa.me/27712345678" target="_blank">WhatsApp</a>
+    <a href="mailto:yourbusiness@email.com" target="_blank">Email</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">Facebook</a>
   </div>
 </main>
 
-<script>
-  const form = document.getElementById('referralForm');
-  const thankYou = document.getElementById('thankYouMessage');
+<footer>
+  <span class="signature">© 2025 It's Drushy with them Lashes...™
+</footer>
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      form.style.display = 'none';
-      thankYou.style.display = 'block';
-    }).catch(error => {
-      alert('Oops! Something went wrong.');
-    });
-  });
+<script>
+const form = document.getElementById('referralForm');
+const thankYou = document.getElementById('thankYouMessage');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  fetch(form.action, {method:'POST', body: new FormData(form), headers:{'Accept':'application/json'}})
+    .then(response => {
+      form.style.display='none';
+      thankYou.style.display='block';
+    })
+    .catch(error => alert('Oops! Something went wrong.'));
+});
 </script>
 
 </body>
 </html>
-
